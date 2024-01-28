@@ -9,7 +9,8 @@ function copyToClipboard() {
     document.body.removeChild(textarea);
 }
 
-document.getElementById('submission').addEventListener('click', function() {
+document.getElementById('input-form').addEventListener('submit', function(event) {
+    event.preventDefault();
     var z = document.getElementById('input-field').value;
     z_value(z);
 });
