@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Mode Website</title>
+    <title>My Dark Mode Page</title>
     <style>
         body {
-            background-color: #1f1f1f;
-            color: #ffffff;
+            background-color: black;
+            color: white;
+            text-align: center;
         }
-        
-        h1 {
-            color: #ffffff;
-        }
-        
-        p {
-            color: #cccccc;
+        .code-box {
+            width: 400px;
+            height: 200px;
+            background-color: #333;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Dark Mode Website</h1>
-    <p>This website is designed with a dark color scheme.</p>
-    
+    <h1>Welcome to My Dark Mode Page</h1>
+    <div class="code-box">
+        <h2>Python Code Runner</h2>
+        <textarea id="python-code" rows="8" cols="50"></textarea>
+        <button id="run-button">Run</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Your Python code execution logic can be added here
+        // using JavaScript or any other programming language of your choice.
+        // Remember to include the necessary libraries or dependencies.
+    </script>
 </body>
 </html>
