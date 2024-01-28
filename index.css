@@ -1,55 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
 body {
-            background-color: rgb(61, 61, 61);
-            color: white;
-            text-align: center;
-        }
-        .code-box {
-            width: 400px;
-            height: 200px;
-            background-color:rgb(61,61,61);
-            margin: 0 auto;
-            margin-top: 50px;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .larger-container {
-        margin-top: 50px;
-        display: flex;
-        justify-content: space-around;
-        }
-        .side-container {
-        width: 45%; /* Adjust as needed */
-        height: 500px; /* Adjust as needed */
-        background-color: rgb(61,61,61);
-        border-radius: 10px;
-        }
-        .header-menu-container {
-         display: flex;
-        align-items: center;
-        }
-        .header-container {
-        font-family: 'Roboto', sans-serif;
-        position: absolute;
-        font-size: x-large;
-        top: 0;
-        left: 0;
-        padding: 20px;
-        }
-        .hamburger-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        background-color: #333;
-        padding: 20px;
-        border-radius: 10px;
-        }
-        .hamburger-icon {
-        margin-right: 20px;
-        }
-        .menu-option {
-        color: #fff;
-        text-decoration: none;
-        margin-bottom: 10px;
-        }
+    background: #000000;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #2b2b2b;
+    position: fixed;
+    height: 60px!important;
+    overflow: hidden;
+    z-index: 10;
+}
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+.mainInner{
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.mainInner div{
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #1f1f1f 0%, #1f1f1f 100%);
+    z-index: 20;
+}
+.sidebarMenuInner{
+    margin:0;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+.header-container {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    padding-left: 50px;
+    font-size: x-large;
+}
+.code-snippet {
+    border: 1px solid #585858;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 45%; /* Adjust as needed */
+    float: left; /* Aligns the box to the left */
+    border-radius: 10px;
+    position: relative; /* Makes the .code-snippet box a relative container for absolute positioning */
+    z-index: 9;
+    overflow:auto;
+}
+
+.code-snippet button {
+    position: absolute; /* Positions the button absolutely within the .code-snippet box */
+    top: 10px; /* Positions the button 10px from the top of the .code-snippet box */
+    right: 10px; /* Positions the button 10px from the right of the .code-snippet box */
+    display: inline-block; /* Makes the button inline */
+    padding: 5px 10px; /* Adjust as needed */
+    background-color: rgb(71, 71, 71); /* Makes the button dark gray */
+    color: white; /* Makes the text color white */
+    border: none; /* Removes the default button border */
+    cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
+}
+
+.code-snippet button:before {
+    content: "\1F4CB"; /* Adds the clipboard icon before the button text */
+    margin-right: 5px; /* Adds some space between the icon and the text */
+}
+.code-snippet pre {
+    color: white;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Adds space between the two boxes */
+    align-items: start;
+}
+
+#input-output-container {
+    flex-grow: 1; /* Takes up the remaining space */
+    margin-left: 3.8%; /* Adds some space between the input box and the code snippet box */
+    width: 20%;
+}
+#input-field {
+    width: 80%;
+    padding: 10px; /* Adds some padding inside the input field */
+    background-color: rgb(71, 71, 71); /* Makes the input field dark gray */
+    color: white; /* Makes the text color white */
+    border: 3px solid; /* Sets the border width and style */
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1; /* Creates a rainbow border */
+}
+#code{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+#input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#input-form button {
+    padding: 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+
+#input-form button:hover {
+    background-color: white; 
+    color: black;
+}
+#output-container {
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-left: 3.8%;
+    width: 20%;
+    min-height: 50%;
+    position: relative;
+
+}
+
+#output-display {
+    width: 80%;
+    min-height: 50px;
+    padding: 10px;
+    background-color: rgb(71, 71, 71);
+    color: white;
+    border: 3px solid;
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+    font-size:x-large
+}

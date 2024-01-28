@@ -7,27 +7,57 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <link rel="stylesheet" href="index.css" />
+    <script defer type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 </head>
-<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
 <body>
-    <div class="header-menu-container">
-    <div class="hamburger-menu">
-        <a href="#" class="menu-option">Option 1</a>
-        <a href="#" class="menu-option">Option 2</a>
-        <a href="#" class="menu-option">Option 3</a>
-    </div>
-    <div class="header-container">
-        Präsentationstool für folgende Aufgabe 1.6
-    </div>
-    </div>
-    <div class="larger-container">
-        <div class="side-container">
-            <div class="code-box"></div>
+    <div class="header">
+        <div class="header-container" style="color: white;">
+            Präsentationstool für Aufgabe 1.6
         </div>
-        <div class="side-container"></div>
+    </div>
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li>Darth - Hidious<span>Github Novice</span></li>
+      <li><a href="https://github.com/Darth-Hidious/darth-hidious.github.io" target="_blank">Source Code</a></li>
+      <li><a href="https://pyscript.net/" target="_blank">Python Web Runtime</a></li>
+      <li><a href="https://moodle.hs-coburg.de" target="_blank">Moodle Direkt Link</a></li>
+      <li><a href="https://github.com/Darth-Hidious" target="_blank">Github Konto</a></li>
+    </ul>
+  </div>
+  <div id='center' class="main center">
+    <div class="flex-container">
+        <div class="code-snippet">
+        <pre id="code" style="background: #191a19;">
+        <code>
+            <span style="color: #66d9ef;">def</span> <span style="color: #a6e22e;">z_value</span>(<span style="color: #fd971f;">z</span>:<span style="color: #fd971f;"> int</span>):
+            <span style="color: #9c19b6;">  if</span> (<span style="color: #fd971f;">z</span> <span style="color: #f92672;">&lt;</span> <span style="color: #ae81ff;">0</span>):
+            <span style="color: #f8f8f2;">      z = z * -1</span> 
+            <span style="color: #fd971f;">      return</span> <span style="color: #f8f8f2;">z</span>
+            <br>
+            <span style="color: #a6e22e;">     z_value</span>(<span style="color: #fd971f;">input()</span>)
+    </code>
+</pre>
+    <button onclick="copyToClipboard()"></button>
         </div>
-    <script>
-      
-    </script>
+        <div id="output-container">
+            <p id="output-display"></p>
+            </div>
+    </div>
+    <div id="input-output-container">
+    <form id="input-form">
+        <input id="input-field" placeholder="Enter a value">
+        <button id="submission" type="submit">Submit</button>
+    </form>
+</div>
+
+
+    <script src="index.js"></script>
 </body>
 </html>
