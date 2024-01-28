@@ -249,3 +249,13 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
     font-size:x-large
 }
+#footer {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px ;
+}
