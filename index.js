@@ -18,19 +18,19 @@ document.getElementById('input-form').addEventListener('submit', function(event)
 var outputCount = 0;
 
 function z_value(input) {
-    var z_spec = parseInt(input);
+    var z = parseInt(input);
     var outputDisplay = document.getElementById('output-display');
-    if (isNaN(z_spec)) {
+    if (isNaN(z)) {
         var error = document.createElement('p');
-        error.textContent = 'Error: Input must be an integer';
+        error.textContent = 'Error: Input muss eine Zahl sein.';
         outputDisplay.appendChild(error);
     } else {
-        if (z_spec < 0) {
-            z_spec = z_spec * -1;
+        if (z < 0) {
+            z = z * -1;
         }
-        console.log(z_spec);
+        console.log(z);
         var output = document.createElement('p');
-        output.textContent = 'Output: ' + z_spec;
+        output.textContent = 'Output: ' + z;
         outputDisplay.appendChild(output);
     }
 
