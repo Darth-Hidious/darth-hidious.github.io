@@ -40,3 +40,26 @@ function z_value(input) {
         outputCount = 0;
     }
 }
+var globalInputValue, globalOutputValue;
+var originalText = document.getElementById('new-container').innerHTML;
+
+function updateText() {
+    var text = originalText;
+
+    text = text.replaceAll('{input}', globalInputValue || '');
+    text = text.replaceAll('{output}', globalOutputValue || '');
+
+    document.getElementById('new-container').innerHTML = text;
+}
+
+document.getElementById('input-field').addEventListener('input', function(event) {
+    globalInputValue = event.target.value;
+    updateText();
+});
+
+var observer = new MutationObserver(function() {
+    globalOutputValue = document.getElementById('output-display').textContent.replace('output: ', '');
+    updateText();
+});
+
+observer.observe(document.getElementById('output-display'), { childList: true });

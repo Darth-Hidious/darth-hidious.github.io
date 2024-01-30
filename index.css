@@ -264,8 +264,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     width: 10vw;
     height: auto;
     bottom: 1vh;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10%;
+    transform: translateX(-50%);  
     margin-bottom: 30px;
     background: #ffffff;
     border-radius: 10px;
@@ -277,4 +277,21 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     height: 100%;
     object-fit: cover;
     border-radius: 10px; /* Adjust as needed */
+}
+#new-container {
+    background-color: rgb(72, 72, 72);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 5px solid;
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+}
+#new-container h1 {
+    text-align: center;
+    font-style: bold;
 }
